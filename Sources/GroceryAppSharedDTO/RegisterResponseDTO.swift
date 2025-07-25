@@ -7,12 +7,12 @@
 
 import Foundation
 
-public struct RegisterResponseDTO: Codable {
+public struct RegisterResponseDTO: Codable, @unchecked Sendable {
     public let error: Bool
-    public var response: String? = nil
+    public var reason: String? = nil
     
-    public init(error: Bool, response: String? = nil) {
+    public init(error: Bool, reason: String? = nil) {
         self.error = error
-        self.response = response
+        self.reason = reason
     }
 }
